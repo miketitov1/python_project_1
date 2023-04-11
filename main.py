@@ -1,7 +1,7 @@
 import sys
 
-sys.path.append('../Project_1_github_version/game')
-sys.path.append('../Project_1_github_version/menu')
+sys.path.append('./game')
+sys.path.append('./menu')
 
 from game import Game
 from main_menu import MainMenu

@@ -5,8 +5,6 @@ from button import Button
 
 pygame.init()
 
-sys.path.append('../python_project_1')
-
 
 def records_menu_events(main_menu):
     """Считывает действия пользователя в меню рекордов"""
