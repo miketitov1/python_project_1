@@ -1,20 +1,23 @@
 import pygame
 import sys
 
-from button import Button
+from menu.button import Button
 
 pygame.init()
 
 
-def records_menu_events(main_menu):
+def records_menu_events(records_menu):
     """Считывает действия пользователя в меню рекордов"""
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             pygame.quit()
             sys.exit()
         if event.type == pygame.MOUSEBUTTONDOWN:
-            if main_menu.exit_button.button.collidepoint(event.pos):
-                main_menu.exit = True
+            if records_menu.exit_button.button.collidepoint(event.pos):
+                records_menu.exit = True
+        if event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_ESCAPE:
+                records_menu.exit = True
 
 
 class Main:

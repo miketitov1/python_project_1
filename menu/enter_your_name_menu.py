@@ -1,8 +1,8 @@
 import pygame
 import sys
 
-from button import Button
-from input_box import Inputbox
+from menu.button import Button
+from menu.input_box import Inputbox
 
 pygame.init()
 

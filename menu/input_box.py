@@ -63,7 +63,7 @@ class Inputbox:
             current_name = line[:divider_index]
             current_score = int(line[divider_index + 1:])
 
-            if current_name == name:
+            if current_name == name:  # Если введённое имя уже присутствует в списках рекордов
                 was_text_in_scores = True
                 if score > current_score:
                     append = '\n'
@@ -71,7 +71,7 @@ class Inputbox:
                         append = ''
                     scores[line_index] = line[:divider_index + 1] + str(score) + append
 
-        if not was_text_in_scores:
+        if not was_text_in_scores:  # Если введённого имени в списках рекордов ещё нет
             scores.append(str(name + '#' + str(score) + '\n'))
 
         def sort_by_score(string):

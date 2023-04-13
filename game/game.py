@@ -2,8 +2,8 @@ import pygame
 import sys
 from pygame.math import Vector2
 
-from snake import Snake
-from fruit import Fruit
+from game.snake import Snake
+from game.fruit import Fruit
 
 pygame.init()
 
@@ -120,11 +120,11 @@ class Game:
             pygame.time.set_timer(self.game_screen_update, self.update_frequency)
 
         if not self.game.paused and not self.game.entering_name:
-            game_events(self.game, self.game_screen_update)  # Считывание действий пользователя
+            game_events(self.game, self.game_screen_update)
         self.game_screen.fill(self.screen_color)
         self.game.draw_entities(self.game_screen)
 
-        logo_surface = self.logo_font.render('Your score:' + str(self.game.score), True, self.logo_color)  # Отрисовка количества очков
+        logo_surface = self.logo_font.render('Your score:' + str(self.game.score), True, self.logo_color)
         self.game_screen.blit(logo_surface, (0, 0))
 
         if not self.game.paused and not self.game.entering_name:
